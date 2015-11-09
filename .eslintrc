@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "mocha": true,
+  },
+  "globals": {
+    "should": false,
+  },
+  "rules": {
+    "id-length": [2, {"min": 2, "properties": "never", "exceptions": ["_", "i", "j"]}],
+    "indent": [2, 2, {"SwitchCase": 1}],
+  },
+}

@@ -11,7 +11,7 @@ function performTest(solutionName, fn) {
   const timer = process.hrtime();
   const result = fn(maxRepeatedChars, words);
   const totalTime = process.hrtime(timer);
-  result.should.be.an.Array();
+  should(result).be.an.Array();
   // @TODO: Check what the actual length should be
   // result.length.should.equal(100);
   return totalTime;
