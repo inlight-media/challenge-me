@@ -5,7 +5,10 @@ import solutions from '../solutions';
 import fs from 'fs';
 const words = fs.readFileSync(`${__dirname}/../data/words.txt`).toString().split('\n');
 
+// The max number of any one char that is allowed
 const maxRepeatedChars = 2;
+// Expected length of the reduced array result based on maxRepeatedChars
+const expectedLength = [0, 8267, 36654, 40482, 40647][maxRepeatedChars];
 
 function performTest(solutionName, fn) {
   const timer = process.hrtime();
@@ -14,7 +17,7 @@ function performTest(solutionName, fn) {
   const ms = time[0] * 1000 + time[1] / 1000000;
   console.log(`${solutionName}: ${ms}ms`);
   should(result).be.an.Array();
-  result.length.should.equal(36654);
+  result.length.should.equal(expectedLength);
   return ms;
 }
 
