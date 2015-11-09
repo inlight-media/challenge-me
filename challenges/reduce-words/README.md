@@ -7,3 +7,13 @@ For instance, if the rule is to have a maximum of 2 repeated characters in a wor
 The script must export only one synchronous function and it will automatically be run as part of the tests.
 
 The fastest function wins. Good luck!
+
+## Requirements
+
+- Fastest performing solution wins
+- Must work in browser and node.js
+- Must not use any other third party module - apart from lodash which is allowed.
+
+## TODO
+
+- We don't yet have the final number of words that the solution should reduce down to to succeed.
