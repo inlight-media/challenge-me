@@ -13,7 +13,4 @@ The fastest function wins. Good luck!
 - Fastest performing solution wins
 - Must work in browser and node.js
 - Must not use any other third party module - apart from lodash which is allowed.
-
-## TODO
-
-- We don't yet have the final number of words that the solution should reduce down to to succeed.
+- Must result in an array of length: 36,654 with only 8 letter words

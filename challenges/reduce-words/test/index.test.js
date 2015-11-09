@@ -5,15 +5,14 @@ import solutions from '../solutions';
 import fs from 'fs';
 const words = fs.readFileSync(`${__dirname}/../data/words.txt`).toString().split('\n');
 
-const maxRepeatedChars = 3;
+const maxRepeatedChars = 2;
 
 function performTest(solutionName, fn) {
   const timer = process.hrtime();
   const result = fn(maxRepeatedChars, words);
   const totalTime = process.hrtime(timer);
   should(result).be.an.Array();
-  // @TODO: Check what the actual length should be
-  // result.length.should.equal(100);
+  result.length.should.equal(36654);
   return totalTime;
 }
 
