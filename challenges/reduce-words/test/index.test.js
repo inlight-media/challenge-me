@@ -10,20 +10,21 @@ const maxRepeatedChars = 2;
 function performTest(solutionName, fn) {
   const timer = process.hrtime();
   const result = fn(maxRepeatedChars, words);
-  const totalTime = process.hrtime(timer);
+  const time = process.hrtime(timer);
+  const ms = time[0] * 1000 + time[1] / 1000000;
+  console.log(`${solutionName}: ${ms}ms`);
   should(result).be.an.Array();
   result.length.should.equal(36654);
-  return totalTime;
+  return ms;
 }
 
 describe('reduce-words', () => {
   it('run reduce-words performance test', () => {
     const times = {};
     _.keys(solutions).forEach((solutionName) => {
-      const time = performTest(solutionName, solutions[solutionName]);
-      console.log(`${solutionName}: ${time[0]}.${time[1]}`);
+      const ms = performTest(solutionName, solutions[solutionName]);
       // Record the time in seconds
-      times[solutionName] = time[0] + time[1] / 100000;
+      times[solutionName] = ms;
     });
     // @TODO: Print out the winner
   });
