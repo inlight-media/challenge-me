@@ -1,0 +1,30 @@
+{
+  "name": "challenge-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint challenges",
+    "test": "./node_modules/.bin/mocha --bail --grep ${grep:-''}",
+    "test:watch": "./node_modules/.bin/mocha --watch --bail --grep ${grep:-''}"
+  },
+  "precommit": [
+    "lint"
+  ],
+  "author": "Inlight Media",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "5.8.3",
+    "eslint-plugin-react": "^3.8.0",
+    "lodash": "3.10.1",
+    "mocha": "2.3.3",
+    "require-directory": "2.1.1",
+    "should": "7.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.4",
+    "eslint": "^1.9.0",
+    "eslint-config-airbnb": "^1.0.0",
+    "pre-commit": "^1.1.2"
+  }
+}
