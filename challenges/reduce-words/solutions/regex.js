@@ -4,8 +4,6 @@
  * Description: Using regex method to try to make it faster to process
  */
 
-import _ from 'lodash';
-
 export default function regex(maxRepeatedChars, words) {
   // Get all alphabet chars
   const alpha = [
@@ -17,12 +15,14 @@ export default function regex(maxRepeatedChars, words) {
   const regexStr = alpha.map((char) => Array(maxRepeatedChars + 1).join(`${char}.*`) + char).join('|');
   // Create regex object
   const regexp = new RegExp(regexStr);
-  return _.compact(_.map(words, (word) => {
-    if (word.length !== 8) {
-      return null;
+
+  // Construct result by iterating words and running length and regex test
+  const results = [];
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (word.length === 8 && !regexp.test(word)) {
+      results.push(word);
     }
-    if (!regexp.test(word)) {
-      return word;
-    }
-  }));
+  }
+  return results;
 }
