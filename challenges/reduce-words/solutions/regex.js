@@ -17,7 +17,7 @@ export default function regex(maxRepeatedChars, words) {
   const regexStr = alpha.map((char) => Array(maxRepeatedChars + 1).join(`${char}.*`) + char).join('|');
   // Create regex object
   const regexp = new RegExp(regexStr);
-  return _.compact(words.map((word) => {
+  return _.compact(_.map(words, (word) => {
     if (word.length !== 8) {
       return null;
     }
