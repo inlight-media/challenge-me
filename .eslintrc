@@ -8,7 +8,7 @@
     "should": false,
   },
   "rules": {
-    "id-length": [2, {"min": 2, "properties": "never", "exceptions": ["_", "i", "j"]}],
+    "id-length": [2, {"min": 2, "properties": "never", "exceptions": ["_", "i", "j", "k"]}],
     "indent": [2, 2, {"SwitchCase": 1}],
   },
 }
