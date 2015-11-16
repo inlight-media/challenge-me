@@ -5,23 +5,21 @@ import solutions from '../solutions';
 import fs from 'fs';
 const words = fs.readFileSync(`${__dirname}/../data/words.txt`).toString().split('\n');
 
-// @TODO: Expected lengths of the results array
-// const expectedLengths = [5000, 5000, 5000];
-
 // Test with 3 different 8-letter words
 const jumbles = ['batching', 'chickens', 'diamonds'];
+const expectedSolutionsCount = [169, 127, 215];
 
 function performTest(solutionName, fn) {
   let output = '';
   let totalTime = 0;
 
-  jumbles.forEach((jumble) => {
+  jumbles.forEach((jumble, index) => {
     const timer = process.hrtime();
     const result = fn(jumble, words);
     const time = process.hrtime(timer);
 
     should(result).be.an.Array();
-    // result.length.should.equal(expectedLengths[index]);
+    result.length.should.equal(expectedSolutionsCount[index]);
 
     const ms = time[0] * 1000 + time[1] / 1000000;
     totalTime += ms;
