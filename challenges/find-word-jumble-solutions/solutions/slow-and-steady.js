@@ -1,3 +1,8 @@
+/**
+ * Slow and steady
+ * Author: Nic Gordon
+ * Description: Loop each letter of each word checking it against the jumble word
+ */
 export default function slowAndSteady(jumble, words) {
   const results = [];
 

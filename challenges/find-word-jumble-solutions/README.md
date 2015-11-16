@@ -23,3 +23,8 @@ The fastest function wins. Good luck!
 - Must work in browser and node.js
 - Your function will be called passing the jumble word (string) as the first argument, and the list of words to get your solutions from (array of strings) as the second argument
 - Must not use any other third party module - apart from lodash which is allowed
+
+## Testing
+
+Run `grep=find-word-jumble-solutions npm run test`
+Changing `test` to `test:watch` will keep the test harness alive and will run the tests every time you save.
