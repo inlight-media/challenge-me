@@ -4,7 +4,7 @@ import solutions from '../solutions';
 
 // @TODO: Add more values to test
 const tests = [
-  [14, 21],
+  [7, 21],
 ];
 
 function performTest(solutionName, fn) {
