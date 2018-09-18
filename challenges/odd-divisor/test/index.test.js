@@ -2,11 +2,16 @@ import _ from 'lodash';
 import should from 'should';
 import solutions from '../solutions';
 
-// @TODO: Add more values to test
 const tests = [
-  [7, 21],
+  [0, 0],
   [3, 5],
   [5, 11],
+  [7, 21],
+  [9, 31],
+  [10, 36],
+  [11, 47],
+  [12, 50],
+  // [1000000000, 333333333334181300], // @TODO: Confirm if correct value
 ];
 
 function performTest(solutionName, fn) {
