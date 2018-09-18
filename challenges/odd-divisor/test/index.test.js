@@ -4,9 +4,12 @@ import solutions from '../solutions';
 
 // @TODO: Add more values to test
 const tests = [
-  [7, 21],
   [3, 5],
   [5, 11],
+  [7, 21],
+  [10, 36],
+  [1000000000, 333333332934278100],
+  // [1000000000, 333333333334181300]
 ];
 
 function performTest(solutionName, fn) {
