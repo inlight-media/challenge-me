@@ -5,6 +5,8 @@ import solutions from '../solutions';
 // @TODO: Add more values to test
 const tests = [
   [7, 21],
+  [3, 5],
+  [5, 11],
 ];
 
 function performTest(solutionName, fn) {
