@@ -13,6 +13,6 @@ The fastest function wins. Good luck!
 ## Requirements
 
 - Fastest performing solution wins
-- Must work in browser and node.js
+- Must work in browser and node.js if written in javascript. Any other language is allowed.
 - Must not use any other third party module - apart from lodash which is allowed.
 - Must run in under 1s
