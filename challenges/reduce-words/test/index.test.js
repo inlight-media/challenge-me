@@ -1,9 +1,12 @@
 import _ from 'lodash';
-import should from 'should';
+import fs from 'fs';
+
 import solutions from '../solutions';
 
-import fs from 'fs';
-const words = fs.readFileSync(`${__dirname}/../data/words.txt`).toString().split('\n');
+const words = fs
+  .readFileSync(`${__dirname}/../data/words.txt`)
+  .toString()
+  .split('\n');
 
 // The max number of any one char that is allowed
 const maxRepeatedChars = 2;
@@ -16,15 +19,15 @@ function performTest(solutionName, fn) {
   const time = process.hrtime(timer);
   const ms = time[0] * 1000 + time[1] / 1000000;
   console.log(`${solutionName}: ${ms}ms`);
-  should(result).be.an.Array();
-  result.length.should.equal(expectedLength);
+  expect(_.isArray(result)).toBe(true);
+  expect(result).toHaveLength(expectedLength);
   return ms;
 }
 
 describe('reduce-words', () => {
-  it('run reduce-words performance test', () => {
+  test('run reduce-words performance test', () => {
     const times = {};
-    _.keys(solutions).forEach((solutionName) => {
+    _.keys(solutions).forEach(solutionName => {
       const ms = performTest(solutionName, solutions[solutionName]);
       // Record the time in seconds
       times[solutionName] = ms;

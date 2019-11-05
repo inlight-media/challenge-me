@@ -4,27 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint challenges",
-    "test": "./node_modules/.bin/mocha --bail --grep ${grep:-''}",
-    "test:watch": "./node_modules/.bin/mocha --watch --bail --grep ${grep:-''}"
+    "lint": "eslint challenges",
+    "test": "jest --bail",
+    "test:watch": "jest --watch"
   },
-  "precommit": [
-    "lint"
-  ],
   "author": "Inlight Media",
   "license": "ISC",
   "dependencies": {
-    "babel-core": "5.8.3",
-    "eslint-plugin-react": "^3.8.0",
-    "lodash": "3.10.1",
-    "mocha": "2.3.3",
-    "require-directory": "2.1.1",
-    "should": "7.1.1"
+    "lodash": "4.17.15",
+    "require-directory": "2.1.1"
   },
   "devDependencies": {
-    "babel-eslint": "^4.1.4",
-    "eslint": "^1.9.0",
-    "eslint-config-airbnb": "^1.0.0",
-    "pre-commit": "^1.1.2"
+    "@babel/core": "7.6.4",
+    "@babel/preset-env": "7.6.3",
+    "babel-jest": "24.9.0",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.5.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jest": "23.0.2",
+    "eslint-plugin-json": "2.0.1",
+    "eslint-plugin-prettier": "3.1.1",
+    "husky": "3.0.9",
+    "jest": "24.9.0",
+    "lint-staged": "9.4.2",
+    "prettier": "1.18.2"
   }
 }

@@ -3,7 +3,7 @@
  * Author: Nic Gordon
  * Description: Filter the list of words down using regex, before using slow an steady
  */
-export default function regexFilter(jumble, words) {
+module.exports = function regexFilter(jumble, words) {
   const results = [];
 
   // Prepare the regex which will filter the word list down considerably
@@ -27,7 +27,7 @@ export default function regexFilter(jumble, words) {
     const jumbleLetters = jumble.split('');
 
     // Loop through the letters in the word and compare against the jumble letters
-    const success = wordLetters.every((letter) => {
+    const success = wordLetters.every(letter => {
       const letterIndex = jumbleLetters.indexOf(letter);
       if (letterIndex < 0) {
         return false;
@@ -44,4 +44,4 @@ export default function regexFilter(jumble, words) {
   }
 
   return results;
-}
+};

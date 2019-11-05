@@ -1,9 +1,12 @@
 import _ from 'lodash';
-import should from 'should';
+import fs from 'fs';
+
 import solutions from '../solutions';
 
-import fs from 'fs';
-const words = fs.readFileSync(`${__dirname}/../data/words.txt`).toString().split('\n');
+const words = fs
+  .readFileSync(`${__dirname}/../data/words.txt`)
+  .toString()
+  .split('\n');
 
 // Test with 3 different 8-letter words
 const jumbles = ['batching', 'chickens', 'diamonds'];
@@ -18,8 +21,8 @@ function performTest(solutionName, fn) {
     const result = fn(jumble, words);
     const time = process.hrtime(timer);
 
-    should(result).be.an.Array();
-    result.length.should.equal(expectedSolutionsCount[index]);
+    expect(_.isArray(result)).toBe(true);
+    expect(result).toHaveLength(expectedSolutionsCount[index]);
 
     const ms = time[0] * 1000 + time[1] / 1000000;
     totalTime += ms;
@@ -32,9 +35,9 @@ function performTest(solutionName, fn) {
 }
 
 describe('find-word-jumble-solutions', () => {
-  it('run find-word-jumble-solutions performance test', () => {
+  test('run find-word-jumble-solutions performance test', () => {
     const times = {};
-    _.keys(solutions).forEach((solutionName) => {
+    _.keys(solutions).forEach(solutionName => {
       const ms = performTest(solutionName, solutions[solutionName]);
       // Record the time in seconds
       times[solutionName] = ms;
