@@ -3,7 +3,7 @@
  * Author: Ben Pearson
  * Description: I think this is a fairly slow way of processing the list
  */
-export default function slowAndSteady(maxRepeatedChars, words) {
+module.exports = function slowAndSteady(maxRepeatedChars, words) {
   const result = [];
   for (let i = 0; i < words.length; i++) {
     const word = words[i];
@@ -33,4 +33,4 @@ export default function slowAndSteady(maxRepeatedChars, words) {
     }
   }
   return result;
-}
+};

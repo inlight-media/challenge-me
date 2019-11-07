@@ -11,7 +11,7 @@ const sum = n => {
 
 const start = Date.now();
 console.log(sum(100000000));
-console.log("time spent", Date.now() - start, "ms");
+console.log('time spent', Date.now() - start, 'ms');
 
 // verify
 // problem is here http://2ality.com/2012/07/large-integers.html

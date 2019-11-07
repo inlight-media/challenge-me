@@ -6,7 +6,7 @@
 function checkWord(maxRepititions, word) {
   // Loop through each letter
   function validateLetters(letters) {
-     // Only maxReps letters left, even if they are the same letter it cannot be invalid
+    // Only maxReps letters left, even if they are the same letter it cannot be invalid
     if (letters.length <= maxRepititions) {
       return true;
     }
@@ -32,7 +32,7 @@ function checkWord(maxRepititions, word) {
   return validateLetters(word.split(''));
 }
 
-export default function recursive(maxRepititions, words) {
+module.exports = function recursive(maxRepititions, words) {
   const results = [];
   let i = words.length;
   while (i--) {
@@ -42,4 +42,4 @@ export default function recursive(maxRepititions, words) {
     }
   }
   return results;
-}
+};

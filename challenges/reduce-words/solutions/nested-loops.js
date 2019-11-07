@@ -3,7 +3,7 @@
  * Author: Nic Gordon
  * Description: Loop words, then letters, then check each other letter in the word for occurrences of that letter
  */
-export default function nestedLoops(maxRepititions, words) {
+module.exports = function nestedLoops(maxRepititions, words) {
   const results = [];
 
   let i = words.length;
@@ -26,7 +26,7 @@ export default function nestedLoops(maxRepititions, words) {
       let letterCount = 0;
       let k = 8;
       while (k-- && valid) {
-        letterCount += (word[k] === letter);
+        letterCount += word[k] === letter;
         if (letterCount > maxRepititions) {
           valid = false;
         }
@@ -39,4 +39,4 @@ export default function nestedLoops(maxRepititions, words) {
   }
 
   return results;
-}
+};
