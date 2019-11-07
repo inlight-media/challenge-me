@@ -4,7 +4,7 @@ I can’t get the song out of my head recently:
 
 [The Ants Go Marching](https://www.youtube.com/watch?v=Pjw2A3QU8Qg)
 
-So why not doing a code challenge about ants?
+So why not do a code challenge about ants?
 
 I found this code challenge online so please don’t google for the solutions.
 
